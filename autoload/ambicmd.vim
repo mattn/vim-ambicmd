@@ -79,7 +79,8 @@ function! ambicmd#expand(key)
     endif
   endfor
 
-  return a:key
+  redraw
+  return repeat("\<BS>", len(cmd)) . cmd
 endfunction
 
 let &cpo = s:save_cpo
